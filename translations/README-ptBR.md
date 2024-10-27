@@ -121,7 +121,7 @@ Se você não estiver usando o TailwindCSS, sua configuração deve ser a seguin
 Para configurar o ESLint no Visual Studio Code:
 
 - Abra o VSCode e vá para Extensões `Ctrl + Shift + X` ou `Command + Shift + X`.
-- Busque por "ESLint" e instale a extensão de Dirk Baeumer.
+- Busque por "ESLint" e instale a [extensão da Microsoft](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint).
 - (Opcional) Reinicie o VSCode.
 
 Para habilitar correções automáticas de código ao salvar no Visual Studio Code, adicione a seguinte configuração ao seu settings.json:
