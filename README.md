@@ -22,6 +22,10 @@
   </a>
 </p>
 
+<p align="center">
+  <i>Read this in other languages: <a href="./translations/README-ptBR.md">Português</a></i>
+</p>
+
 <h2 id="project-overview">Project Overview 📋</h2>
 
 This repository provides a setup for integrating ESLint and Prettier into your Next.js project with TailwindCSS.
