@@ -114,6 +114,13 @@ If you're not using TailwindCSS, your configuration should be as follows:
 ```
 
 #### 3. Configure VSCode for AutoFix
+
+To set up ESLint in Visual Studio Code:
+
+- Open VSCode and go to Extensions `Ctrl + Shift + X` or `Command + Shift + X`.
+- Search "ESLint" and install the extension by Dirk Baeumer.
+- (Optional) Restart VSCode.
+
 To enable automatic code fixes on save in Visual Studio Code, add the following setting to your `settings.json`:
 
 ```json
