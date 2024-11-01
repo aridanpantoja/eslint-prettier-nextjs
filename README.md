@@ -53,11 +53,11 @@ Ensure you have the following:
 
 Using npm:
 ```bash
-npm install -D eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier prettier-plugin-tailwindcss
+npm install -D eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier prettier prettier-plugin-tailwindcss
 ```
 Using yarn:
 ```bash
-yarn add --dev eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier prettier-plugin-tailwindcss
+yarn add --dev eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prettier prettier prettier-plugin-tailwindcss
 ```
 
 #### 2. Configure ESLint and Prettier
