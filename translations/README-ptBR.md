@@ -63,6 +63,42 @@ yarn add --dev eslint-config-prettier eslint-plugin-jsx-a11y eslint-plugin-prett
 
 #### 2. Configure o ESLint e o Prettier
 
+Se você estiver usando o Next.js 15 ou superior, crie ou atualize seu arquivo `eslint.config.mjs` em vez de usar `.eslintrc.json`, com a seguinte configuração:
+
+```ts
+import { FlatCompat } from '@eslint/eslintrc'
+
+const compat = new FlatCompat({
+  // import.meta.dirname is available after Node.js v20.11.0
+  baseDirectory: import.meta.dirname,
+})
+
+const eslintConfig = [
+  ...compat.config({
+    extends: [
+      'next',
+      'next/core-web-vitals',
+      'next/typescript',
+      'plugin:prettier/recommended',
+      'plugin:jsx-a11y/recommended',
+    ],
+    plugins: ['prettier', 'jsx-a11y'],
+    rules: {
+      'prettier/prettier': 'error',
+      'react/react-in-jsx-scope': 'off',
+      'jsx-a11y/alt-text': 'warn',
+      'jsx-a11y/aria-props': 'warn',
+      'jsx-a11y/aria-proptypes': 'warn',
+      'jsx-a11y/aria-unsupported-elements': 'warn',
+      'jsx-a11y/role-has-required-aria-props': 'warn',
+      'jsx-a11y/role-supports-aria-props': 'warn',
+    },
+  }),
+]
+
+export default eslintConfig
+```
+
 Após instalar as dependências, crie ou atualize seu arquivo `.eslintrc.json` com a seguinte configuração:
 
 ```json
