@@ -48,7 +48,7 @@ Certifique-se de ter o seguinte:
 - **Projeto Next.js**: Crie um novo projeto com o comando: `npx create-next-app@latest my-next-app` ou `yarn create next-app my-next-app`
 - Quando solicitado, escolha `Sim` para usar o ESLint.
 
-> Se você não estiver usando o TailwindCSS, pode pular a instalação do `prettier-plugin-tailwindcss` e removê-lo do seu arquivo `.prettierrc.json`.
+> Se você não estiver usando o TailwindCSS, pode pular a instalação do `prettier-plugin-tailwindcss` e removê-lo dos plugins do Prettier.
 
 #### 1. Instale as Dependências Necessárias
 
@@ -84,7 +84,22 @@ const eslintConfig = [
     ],
     plugins: ['prettier', 'jsx-a11y'],
     rules: {
-      'prettier/prettier': 'error',
+      'prettier/prettier': [
+        'error',
+        {
+          trailingComma: 'all',
+          semi: false,
+          tabWidth: 2,
+          singleQuote: true,
+          printWidth: 80,
+          endOfLine: 'auto',
+          arrowParens: 'always',
+          plugins: ['prettier-plugin-tailwindcss'],
+        },
+        {
+          usePrettierrc: false,
+        },
+      ],
       'react/react-in-jsx-scope': 'off',
       'jsx-a11y/alt-text': 'warn',
       'jsx-a11y/aria-props': 'warn',
@@ -111,7 +126,22 @@ Após instalar as dependências, crie ou atualize seu arquivo `.eslintrc.json` c
   ],
   "plugins": ["prettier", "jsx-a11y"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "all",
+        "semi": false,
+        "tabWidth": 2,
+        "singleQuote": true,
+        "printWidth": 80,
+        "endOfLine": "auto",
+        "arrowParens": "always",
+        "plugins": ["prettier-plugin-tailwindcss"]
+      },
+      {
+        "usePrettierrc": false
+      }
+    ],
     "react/react-in-jsx-scope": "off",
     "jsx-a11y/alt-text": "warn",
     "jsx-a11y/aria-props": "warn",
@@ -123,34 +153,7 @@ Após instalar as dependências, crie ou atualize seu arquivo `.eslintrc.json` c
 }
 ```
 
-Em seguida, crie um arquivo .prettierrc.json para personalizar suas configurações do Prettier, se desejado:
-
-```json
-{
-  "trailingComma": "all",
-  "semi": false,
-  "tabWidth": 2,
-  "singleQuote": true,
-  "printWidth": 80,
-  "endOfLine": "auto",
-  "arrowParens": "always",
-  "plugins": ["prettier-plugin-tailwindcss"]
-}
-```
-
-Se você não estiver usando o TailwindCSS, sua configuração deve ser a seguinte:
-
-```json
-{
-  "trailingComma": "all",
-  "semi": false,
-  "tabWidth": 2,
-  "singleQuote": true,
-  "printWidth": 80,
-  "endOfLine": "auto",
-  "arrowParens": "always"
-}
-```
+Nota: Personalize suas configurações do Prettier, se desejar, dentro do seu `eslint.config.mjs` ou `.eslintrc.json`.
 
 #### 3. Configure o VSCode para autocorreção
 
