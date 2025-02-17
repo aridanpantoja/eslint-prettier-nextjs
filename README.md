@@ -1,7 +1,7 @@
 <h1 align="center">ESLint + Prettier Setup for Next.js 💻</h1> 
 
 <p align="center">
-    <b>This repository provides a comprehensive guide for integrating ESLint and Prettier into a Next.js project with TailwindCSS.</b>
+  <b>This repository provides a comprehensive guide for integrating ESLint and Prettier into a Next.js project with TailwindCSS.</b>
 </p>
 
 <p align="center">
@@ -126,14 +126,14 @@ Next, create a `.prettierrc.json` file to customize your Prettier settings, if d
 
 ```json
 {
-    "trailingComma": "all",
-    "semi": false,
-    "tabWidth": 2,
-    "singleQuote": true,
-    "printWidth": 80,
-    "endOfLine": "auto",
-    "arrowParens": "always",
-    "plugins": ["prettier-plugin-tailwindcss"]
+  "trailingComma": "all",
+  "semi": false,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "printWidth": 80,
+  "endOfLine": "auto",
+  "arrowParens": "always",
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
 ```
 
@@ -163,7 +163,7 @@ To enable automatic code fixes on save in Visual Studio Code, add the following 
 
 ```json
 "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always",
+  "source.fixAll.eslint": "always",
 }
 ```
 

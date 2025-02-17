@@ -1,7 +1,7 @@
 <h1 align="center">Configuração do ESLint + Prettier para Next.js 💻</h1> 
 
 <p align="center">
-    <b>Este repositório fornece um guia abrangente para integrar o ESLint e o Prettier em um projeto Next.js com TailwindCSS.</b>
+  <b>Este repositório fornece um guia abrangente para integrar o ESLint e o Prettier em um projeto Next.js com TailwindCSS.</b>
 </p>
 
 <p align="center">
@@ -127,14 +127,14 @@ Em seguida, crie um arquivo .prettierrc.json para personalizar suas configuraç�
 
 ```json
 {
-    "trailingComma": "all",
-    "semi": false,
-    "tabWidth": 2,
-    "singleQuote": true,
-    "printWidth": 80,
-    "endOfLine": "auto",
-    "arrowParens": "always",
-    "plugins": ["prettier-plugin-tailwindcss"]
+  "trailingComma": "all",
+  "semi": false,
+  "tabWidth": 2,
+  "singleQuote": true,
+  "printWidth": 80,
+  "endOfLine": "auto",
+  "arrowParens": "always",
+  "plugins": ["prettier-plugin-tailwindcss"]
 }
 ```
 
@@ -164,7 +164,7 @@ Para habilitar correções automáticas de código ao salvar no Visual Studio Co
 
 ```json
 "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always",
+  "source.fixAll.eslint": "always",
 }
 ```
 

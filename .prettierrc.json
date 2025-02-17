@@ -7,4 +7,5 @@
     "endOfLine": "auto",
     "arrowParens": "always",
     "plugins": ["prettier-plugin-tailwindcss"]
-}
+  }
+  
