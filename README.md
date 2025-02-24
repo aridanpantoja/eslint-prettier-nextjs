@@ -1,7 +1,7 @@
 <h1 align="center">ESLint + Prettier Setup for Next.js 💻</h1> 
 
 <p align="center">
-    <b>This repository provides a comprehensive guide for integrating ESLint and Prettier into a Next.js project with TailwindCSS.</b>
+  <b>This repository provides a comprehensive guide for integrating ESLint and Prettier into a Next.js project with TailwindCSS.</b>
 </p>
 
 <p align="center">
@@ -47,7 +47,7 @@ Ensure you have the following:
 - **Next.js Project**: Create a new project with the command: `npx create-next-app@latest my-next-app` or `yarn create next-app my-next-app`
 - When prompted, choose `Yes` for using ESLint.
 
-> If you're not using TailwindCSS, you can skip installing `prettier-plugin-tailwindcss` and remove it from your `.prettierrc.json` file.
+> If you're not using TailwindCSS, you can skip installing `prettier-plugin-tailwindcss` and remove it from your Prettier plugins.
 
 #### 1. Install Required Dependencies
 
@@ -83,7 +83,22 @@ const eslintConfig = [
     ],
     plugins: ['prettier', 'jsx-a11y'],
     rules: {
-      'prettier/prettier': 'error',
+      'prettier/prettier': [
+        'error',
+        {
+          trailingComma: 'all',
+          semi: false,
+          tabWidth: 2,
+          singleQuote: true,
+          printWidth: 80,
+          endOfLine: 'auto',
+          arrowParens: 'always',
+          plugins: ['prettier-plugin-tailwindcss'],
+        },
+        {
+          usePrettierrc: false,
+        },
+      ],
       'react/react-in-jsx-scope': 'off',
       'jsx-a11y/alt-text': 'warn',
       'jsx-a11y/aria-props': 'warn',
@@ -110,7 +125,22 @@ After installing the dependencies, create or update your `.eslintrc.json` file w
   ],
   "plugins": ["prettier", "jsx-a11y"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "all",
+        "semi": false,
+        "tabWidth": 2,
+        "singleQuote": true,
+        "printWidth": 80,
+        "endOfLine": "auto",
+        "arrowParens": "always",
+        "plugins": ["prettier-plugin-tailwindcss"]
+      },
+      {
+        "usePrettierrc": false
+      }
+    ],
     "react/react-in-jsx-scope": "off",
     "jsx-a11y/alt-text": "warn",
     "jsx-a11y/aria-props": "warn",
@@ -122,34 +152,7 @@ After installing the dependencies, create or update your `.eslintrc.json` file w
 }
 ```
 
-Next, create a `.prettierrc.json` file to customize your Prettier settings, if desired:
-
-```json
-{
-    "trailingComma": "all",
-    "semi": false,
-    "tabWidth": 2,
-    "singleQuote": true,
-    "printWidth": 80,
-    "endOfLine": "auto",
-    "arrowParens": "always",
-    "plugins": ["prettier-plugin-tailwindcss"]
-}
-```
-
-If you're not using TailwindCSS, your configuration should be as follows:
-
-```json
-{
-  "trailingComma": "all",
-  "semi": false,
-  "tabWidth": 2,
-  "singleQuote": true,
-  "printWidth": 80,
-  "endOfLine": "auto",
-  "arrowParens": "always"
-}
-```
+Note: Customize your Prettier settings, if desired, inside your `eslint.config.mjs` or `.eslintrc.json`.
 
 #### 3. Configure VSCode for AutoFix
 
@@ -163,7 +166,7 @@ To enable automatic code fixes on save in Visual Studio Code, add the following 
 
 ```json
 "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always",
+  "source.fixAll.eslint": "always",
 }
 ```
 
